@@ -1,9 +1,12 @@
 import React from 'react';
+import Dashboard from './dashboard';
 
-const MainContent = () => {
+const MainContent = ({ movieRepo }) => {
 
   return (
-    <main> main </main>
+    <main>
+      <Dashboard movieRepo={movieRepo} />
+    </main>
   )
 }
 
