@@ -13,7 +13,8 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      filterOption: 'bangersToStankers'
+      filterOption: 'bangersToStankers',
+      selectedMovie: false,
     }
   }
 
@@ -25,15 +26,28 @@ class App extends Component {
     this.setState({ movies: movieData.movies });
   }
 
+  // toggleSingleView() {
+  //     this.state.selectedMovie ? selectMovie() : hideSingleView();
+  // }
+
+  selectMovie = (e) => {
+    let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
+    this.setState({ selectedMovie: highlightedMovie })
+  }
+
   render() {
     return (
-      <div className='app'>
+      <div className='app' onClick={this.selectMovie}>
         <Header />
         {this.state.movies.length &&
           <MainContent
             movieRepo={this.state.movies}
             filterOption={this.state.filterOption}
-          />}
+          />
+        }
+        {this.state.selectedMovie &&
+          <SingleMovieView selectedMovie={this.state.selectedMovie} />
+        }
         <Nav />
         <Footer />
       </div>

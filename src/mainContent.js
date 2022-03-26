@@ -1,29 +1,14 @@
 import React from 'react';
 import Dashboard from './dashboard';
 import SingleMovieView from './singleMovieView'
-let displaySingleMovie;
-let closeSingleMovie;
 
-const MainContent = ({ movieRepo, filterOption }) => {
-
-  displaySingleMovie = (e) => {
-    let targetMovie = movieRepo.find(movie => movie.id == e.target.id)
-    console.log(targetMovie)
-    return targetMovie
-  }
-
-  closeSingleMovie = () => {
-
-  }
-
+const MainContent = ({ movieRepo, filterOption, selectedMovie }) => {
 
   return (
     <main>
       <Dashboard movieRepo={movieRepo} filterOption={filterOption} />
-      <SingleMovieView movie={displaySingleMovie} />
     </main>
   )
 }
 
 export default MainContent;
-export {displaySingleMovie, closeSingleMovie};
