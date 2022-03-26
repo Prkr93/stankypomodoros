@@ -9,23 +9,35 @@ import movieData from './data/test-data';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       movies: [],
+      filterOption: 'bangersToStankers'
     }
   }
+
+  componentDidMount() {
+    this.getMovies();
+  }
+
+  getMovies() {
+    this.setState({ movies: movieData.movies });
+  }
+
   render() {
     return (
       <div className='app'>
         <Header />
-        <MainContent />
+        {this.state.movies.length &&
+          <MainContent
+            movieRepo={this.state.movies}
+            filterOption={this.state.filterOption}
+          />}
         <Nav />
         <Footer />
-        <h1>Hello!!!</h1>
       </div>
     )
   }
-
 }
 
 export default App;

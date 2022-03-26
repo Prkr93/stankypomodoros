@@ -1,0 +1,17 @@
+footer {
+  background-color: scale-color($darkBlue, $lightness: -20%);
+  color: $white;
+  section {
+    display: flex;
+    justify-content: center;
+    > * {
+      margin: 1.5em;
+    }
+  }
+  a {
+    color: scale-color($blue, $lightness: 20%);
+    &:visited {
+      color: scale-color($blue, $lightness: -20%);;
+    }
+  }
+}

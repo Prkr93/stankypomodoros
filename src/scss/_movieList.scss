@@ -1,0 +1,26 @@
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @include breakpoint(wide) {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .movie-card {
+    margin: 1%;
+    height: 8em;
+    width: 80%;
+    @include breakpoint(small) {
+      width: 45%;
+    }
+    @include breakpoint(medium) {
+      width: 35%;
+    }
+    @include breakpoint(large) {
+      width: 30%;
+    }
+    @include breakpoint(wide) {
+      width: 20%;
+    }
+  }
+}

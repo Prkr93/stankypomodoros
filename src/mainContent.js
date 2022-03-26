@@ -1,9 +1,12 @@
 import React from 'react';
+import Dashboard from './dashboard';
 
-const MainContent = () => {
+const MainContent = ({ movieRepo, filterOption }) => {
 
   return (
-    <main> main </main>
+    <main>
+      <Dashboard movieRepo={movieRepo} filterOption={filterOption} />
+    </main>
   )
 }
 

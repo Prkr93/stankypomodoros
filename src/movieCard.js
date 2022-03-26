@@ -1,9 +1,13 @@
 import React from 'react';
 
-const MovieCard = () => {
-
+const MovieCard = ({ movie }) => {
+  let style = {
+    backgroundImage: `url(${movie.backdrop_path})`
+  }
   return (
-    <article> movie card </article>
+    <article className='movie-card' style={style}>
+      <h3>{movie.title}</h3>
+    </article>
   )
 }
 

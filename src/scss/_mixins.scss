@@ -1,0 +1,17 @@
+@mixin breakpoint($name) {
+  @each $label, $size in $breakpoints {
+    @if $name == $label {
+      @media (min-width: $size) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin button($color, $backgroundColor) {
+  color: $color;
+  background-color: $backgroundColor;
+  padding: .5em 1em;
+  border-radius: 3px;
+  text-align: center;
+}
