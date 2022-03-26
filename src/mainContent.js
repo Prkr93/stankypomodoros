@@ -7,7 +7,7 @@ let closeSingleMovie;
 const MainContent = ({ movieRepo, filterOption }) => {
 
   displaySingleMovie = () => {
-    console.log('banana')
+    
   }
 
   closeSingleMovie = () => {

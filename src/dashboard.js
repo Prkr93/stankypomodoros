@@ -4,7 +4,7 @@ import Filter from './filter';
 import MovieList from './movieList';
 
 const Dashboard = ({ movieRepo, filterOption }) => {
-  console.log(filterOption)
+  // console.log(filterOption)
   //slideshow choose top 5 and randomize
   //filter needs to reference state (living in app)
   //movie list needs state of both movieRepo and filterOption -> sort array of movies based on filter option, render array

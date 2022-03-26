@@ -10,12 +10,12 @@ const MovieList = ({ movieRepo, filterOption }) => {
   //iterate through last 5 in array, push each into topRated
   if (filterOption === 'bangersToStankers') {
 
-    console.log(filterOption)
+    // console.log(filterOption)
     let stankersToBangers = movieRepo.sort((a, b) => a.average_rating - b.average_rating);
     let bangersToStankers = movieRepo.sort((a, b) => b.average_rating - a.average_rating);
     topRated = bangersToStankers.slice(0, 5);
   }
-  console.log(topRated)
+  // console.log(topRated)
 
   const movieCards = movieRepo.map(movie => <MovieCard movie={movie} key={movie.id} />);
 
