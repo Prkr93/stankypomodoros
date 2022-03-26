@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './dashboard';
-
+import SingleMovieView from './singleMovieView'
 let displaySingleMovie;
 let closeSingleMovie;
 
@@ -18,7 +18,7 @@ const MainContent = ({ movieRepo, filterOption }) => {
   return (
     <main>
       <Dashboard movieRepo={movieRepo} filterOption={filterOption} />
-
+      <SingleMovieView />
     </main>
   )
 }

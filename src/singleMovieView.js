@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 const SingleMovieView = () => {
 
   return (
-<div>banana</div>
+<div className='single-movie'>banana</div>
   )
 }
 
