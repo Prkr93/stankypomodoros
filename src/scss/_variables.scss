@@ -5,16 +5,6 @@ $breakpoints: (
   wide: 1200px
 );
 
-@mixin breakpoint($name) {
-  @each $label, $size in $breakpoints {
-    @if $name == $label {
-      @media (min-width: $size) {
-        @content;
-      }
-    }
-  }
-}
-
 $darkBlue: #0A122A;
 $blue: #80A4ED;
 $gray: #838691;
