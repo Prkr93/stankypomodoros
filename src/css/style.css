@@ -2,9 +2,41 @@
   background-color: #0A122A;
 }
 
+footer {
+  background-color: #080e22;
+  color: #FBFAF8;
+}
+footer section {
+  display: flex;
+  justify-content: center;
+}
+footer section > * {
+  margin: 1.5em;
+}
+footer a {
+  color: #99b6f1;
+}
+footer a:visited {
+  color: #4076e4;
+}
+
 header {
   background-color: #9A031E;
   color: white;
+}
+header h1 {
+  margin: 0;
+  padding: 0.5em;
+}
+header button {
+  position: absolute;
+  right: 1em;
+  top: 1.25em;
+  color: #FBFAF8;
+  background-color: #0A122A;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  text-align: center;
 }
 
 .movie-list {
