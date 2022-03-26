@@ -1,4 +1,5 @@
 import React from 'react';
+import topRated from './movieList';
 
 const Slideshow = () => {
 
