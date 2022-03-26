@@ -1,0 +1,15 @@
+.movie-card {
+  position: relative;
+  background-position: center top;
+  background-size: 100% auto;
+  h3 {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: .5em 0;
+  }
+}

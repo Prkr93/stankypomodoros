@@ -20,7 +20,7 @@ const MovieList = ({ movieRepo, filterOption }) => {
   const movieCards = movieRepo.map(movie => <MovieCard movie={movie} key={movie.id} />);
 
   return (
-    <section> {movieCards} </section>
+    <section className='movie-list'> {movieCards} </section>
   )
 }
 
