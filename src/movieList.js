@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieCard from './movieCard';
 
 let topRated;
 
@@ -16,8 +17,10 @@ const MovieList = ({ movieRepo, filterOption }) => {
   }
   console.log(topRated)
 
+  const movieCards = movieRepo.map(movie => <MovieCard movie={movie} key={movie.id} />);
+
   return (
-    <section> Movielist bob </section>
+    <section> {movieCards} </section>
   )
 }
 
