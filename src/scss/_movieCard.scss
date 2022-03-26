@@ -9,7 +9,10 @@
     width: 100%;
     margin: 0;
     text-align: center;
-    color: white;
+    color: $white;
     padding: .5em 0;
+  }
+  &:hover{
+    cursor: pointer;
   }
 }

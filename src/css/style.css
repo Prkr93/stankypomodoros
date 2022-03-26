@@ -1,3 +1,12 @@
+.dashboard {
+  background-color: #0A122A;
+}
+
+header {
+  background-color: #9A031E;
+  color: white;
+}
+
 .movie-list {
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +56,9 @@
   width: 100%;
   margin: 0;
   text-align: center;
-  color: white;
+  color: #FBFAF8;
   padding: 0.5em 0;
+}
+.movie-card:hover {
+  cursor: pointer;
 }

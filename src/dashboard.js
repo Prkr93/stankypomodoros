@@ -12,7 +12,7 @@ const Dashboard = ({ movieRepo, filterOption }) => {
   //const slideshowMovies = movieRepo
 
   return (
-    <section>
+    <section className='dashboard'>
       <Slideshow />
       <Filter />
       <MovieList movieRepo={movieRepo} filterOption={filterOption} />
