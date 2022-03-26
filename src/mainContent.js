@@ -20,7 +20,7 @@ const MainContent = ({ movieRepo, filterOption }) => {
   return (
     <main>
       <Dashboard movieRepo={movieRepo} filterOption={filterOption} />
-      <SingleMovieView />
+      <SingleMovieView movie={displaySingleMovie} />
     </main>
   )
 }
