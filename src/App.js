@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Modal from 'react-modal';
 import './css/style.css';
 import Header from './header';
 import MainContent from './mainContent';
