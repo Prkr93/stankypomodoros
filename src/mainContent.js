@@ -6,8 +6,10 @@ let closeSingleMovie;
 
 const MainContent = ({ movieRepo, filterOption }) => {
 
-  displaySingleMovie = () => {
-    
+  displaySingleMovie = (e) => {
+    let targetMovie = movieRepo.find(movie => movie.id == e.target.id)
+    console.log(targetMovie)
+    return targetMovie
   }
 
   closeSingleMovie = () => {

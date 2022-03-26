@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
     backgroundImage: `url(${movie.backdrop_path})`
   }
   return (
-    <article onClick={displaySingleMovie} className='movie-card' style={style}>
+    <article id={movie.id} onClick={displaySingleMovie} className='movie-card' style={style}>
       <h3>{movie.title}</h3>
     </article>
   )
