@@ -12,14 +12,13 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      filterOption: 'bangersToStankers'
     }
   }
 
   componentDidMount() {
     this.getMovies();
   }
-
-
 
   getMovies() {
     this.setState({ movies: movieData.movies });
@@ -29,13 +28,16 @@ class App extends Component {
     return (
       <div className='app'>
         <Header />
-        {this.state.movies.length && <MainContent movieRepo={this.state.movies} />}
+        {this.state.movies.length &&
+          <MainContent
+            movieRepo={this.state.movies}
+            filterOption={this.state.filterOption}
+          />}
         <Nav />
         <Footer />
       </div>
     )
   }
-
 }
 
 export default App;
