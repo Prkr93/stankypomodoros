@@ -1,0 +1,16 @@
+$breakpoints: (
+  small: 480px,
+  medium: 720px,
+  large: 960px,
+  wide: 1200px
+);
+
+@mixin breakpoint($name) {
+  @each $label, $size in $breakpoints {
+    @if $name == $label {
+      @media (min-width: $size) {
+        @content;
+      }
+    }
+  }
+}
