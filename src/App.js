@@ -5,6 +5,7 @@ import Header from './header';
 import MainContent from './mainContent';
 import Nav from './nav';
 import Footer from './footer';
+import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
 
 class App extends Component {
