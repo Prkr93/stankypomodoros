@@ -38,6 +38,8 @@ class App extends Component {
     console.log(singleData.movie)
   }
 
+
+
   toggleHighlighted = (e) => {
     this.fetchData()
     if (this.state.selectedMovie) {
