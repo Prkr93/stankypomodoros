@@ -7,7 +7,7 @@ import Nav from './nav';
 import Footer from './footer';
 import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
-import {movieDatabase} from './apiCalls'
+import {movieDatabase, singleMovieData, passData} from './apiCalls'
 // console.log('mdb', movieDatabase)
 
 
@@ -23,8 +23,8 @@ class App extends Component {
   }
 
   fetchData() {
-    Promise.all([movieDatabase]).then(data => {
-       this.getMovies(data[0].movies)
+    Promise.all([movieDatabase, singleMovieData]).then(data => {
+       this.getMovies(data[0].movies, data[1])
     })
   }
 
@@ -32,8 +32,10 @@ class App extends Component {
     this.fetchData();
   }
 
-  getMovies(movieDB) {
-    this.setState({ movies: movieDB });
+
+  getMovies(movieDB, singleData) {
+    this.setState({ movies: movieDB, selectedMovie: singleMovieData });
+    console.log(singleData)
   }
 
   toggleHighlighted = (e) => {
@@ -41,7 +43,8 @@ class App extends Component {
       this.setState({selectedMovie: false})
     } else {
       let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
-      this.setState({ selectedMovie: highlightedMovie })
+      passData(e.target.id)
+      // this.setState({ selectedMovie: highlightedMovie })
     }
   }
 

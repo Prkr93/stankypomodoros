@@ -8,8 +8,11 @@ const getData = (fetchUrl) => {
     main.innerHTML = error.message
   })
 }
-
+let singleMovieData;
 const movieDatabase = getData('movies')
-const 
 
-export {movieDatabase};
+const passData = (id) => {
+singleMovieData = getData(`movies/${id}`)
+}
+
+export {movieDatabase, singleMovieData, passData};
