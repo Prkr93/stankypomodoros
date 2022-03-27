@@ -34,17 +34,18 @@ class App extends Component {
 
 
   getMovies(movieDB, singleData) {
-    this.setState({ movies: movieDB, selectedMovie: singleMovieData });
-    console.log(singleData)
+    this.setState({ movies: movieDB, selectedMovie: singleData });
+    console.log(singleData.movie)
   }
 
   toggleHighlighted = (e) => {
+    this.fetchData()
     if (this.state.selectedMovie) {
       this.setState({selectedMovie: false})
     } else {
       let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
       passData(e.target.id)
-      // this.setState({ selectedMovie: highlightedMovie })
+      this.setState({ selectedMovie: highlightedMovie })
     }
   }
 
