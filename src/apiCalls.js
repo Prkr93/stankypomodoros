@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 const getData = (fetchUrl) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${fetchUrl}`)
   .then(response => response.json())
+  .catch(error => {
+    const main = document.querySelector('main')
+    main.innerHTML = error.message
+  })
 }
 
-let movieDatabase = getData('movies')
+const movieDatabase = getData('movies')
+const 
 
-console.log()
 export {movieDatabase};
