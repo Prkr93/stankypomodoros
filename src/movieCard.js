@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, toggleHighlighted }) => {
   let style = {
     backgroundImage: `url(${movie.backdrop_path})`
   }
   return (
-    <article id={movie.id} className='movie-card' style={style}>
+    <article id={movie.id} className='movie-card' style={style} onClick={toggleHighlighted}>
       <h3>{movie.title}</h3>
     </article>
   )
