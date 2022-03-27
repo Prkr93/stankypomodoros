@@ -7,6 +7,8 @@ import Nav from './nav';
 import Footer from './footer';
 import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
+import {getFetchData} from './apiCalls'
+getFetchData()
 
 class App extends Component {
   constructor() {
