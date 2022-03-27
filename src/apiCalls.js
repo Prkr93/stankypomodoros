@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-const getFetchData = () => {
-  fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+const getData = (fetchUrl) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${fetchUrl}`)
   .then(response => response.json())
-  .then(data => console.log(data.movies[0]))
 }
 
+let movieDatabase = getData('movies')
 
-export {getFetchData};
+console.log()
+export {movieDatabase};

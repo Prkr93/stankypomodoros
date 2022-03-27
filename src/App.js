@@ -7,8 +7,10 @@ import Nav from './nav';
 import Footer from './footer';
 import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
-import {getFetchData} from './apiCalls'
-getFetchData()
+import {movieDatabase} from './apiCalls'
+// console.log('mdb', movieDatabase)
+
+
 
 class App extends Component {
   constructor() {
@@ -20,12 +22,18 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.getMovies();
+  fetchData() {
+    Promise.all([movieDatabase]).then(data => {
+       this.getMovies(data[0].movies)
+    })
   }
 
-  getMovies() {
-    this.setState({ movies: movieData.movies });
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  getMovies(movieDB) {
+    this.setState({ movies: movieDB });
   }
 
   toggleHighlighted = (e) => {
