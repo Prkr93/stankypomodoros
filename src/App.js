@@ -24,7 +24,8 @@ class App extends Component {
 
   fetchData() {
     Promise.all([movieDatabase, singleMovieData]).then(data => {
-       this.getMovies(data[0].movies, data[1])
+       this.getMovies(data[0].movies)
+       (data[1] && this.getHighlighted(data[1]))
     })
   }
 
@@ -32,22 +33,26 @@ class App extends Component {
     this.fetchData();
   }
 
-
-  getMovies(movieDB, singleData) {
-    this.setState({ movies: movieDB, selectedMovie: singleData });
-    console.log(singleData.movie)
+  getMovies(movieDB) {
+    this.setState({ movies: movieDB });
+    //console.log(singleData.movie)
   }
 
-
+  getHighlighted(singleData) {
+    this.setState({ selectedMovie: singleData.movie });
+  }
 
   toggleHighlighted = (e) => {
-    this.fetchData()
+
     if (this.state.selectedMovie) {
       this.setState({selectedMovie: false})
     } else {
+
       let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
       passData(e.target.id)
-      this.setState({ selectedMovie: highlightedMovie })
+      this.fetchData()
+
+      //this.setState({ selectedMovie: highlightedMovie })
     }
   }
 
