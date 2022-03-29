@@ -8,7 +8,7 @@ import Footer from './footer';
 import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
 import {movieDatabase, singleMovieData, passData} from './apiCalls'
-// console.log('mdb', movieDatabase)
+
 
 
 
@@ -24,18 +24,13 @@ class App extends Component {
 
   fetchData() {
     Promise.all([movieDatabase, singleMovieData]).then(data => {
-       this.getMovies(data[0].movies)
+       this.setState({ movies: data[0].movies });
        (data[1] && this.getHighlighted(data[1]))
     })
   }
 
   componentDidMount() {
     this.fetchData();
-  }
-
-  getMovies(movieDB) {
-    this.setState({ movies: movieDB });
-    //console.log(singleData.movie)
   }
 
   getHighlighted(singleData) {
@@ -49,10 +44,8 @@ class App extends Component {
     } else {
 
       let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
-      passData(e.target.id)
-      this.fetchData()
-
-      //this.setState({ selectedMovie: highlightedMovie })
+      passData(e.target.id);
+      this.fetchData();
     }
   }
 
