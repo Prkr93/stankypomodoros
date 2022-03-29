@@ -22,22 +22,7 @@ describe('Dashboard', () => {
       .get('h2')
   });
 
-  it('should be able to change views to a single view after clicking on a movie', () => {
-    cy.visit('http://localhost:3000')
-      .get('#581392')
-      .click()
-      .get('.overview')
-      .siblings('.budget')
-      .siblings('.average_rating')
-      .siblings('.runtime')
-      .siblings('.revenue')
-      .siblings('.overrelease_dateview')
-      .siblings('.genres')
-  });
 
-  it.skip('should be able to click the X to return to the dashboard view', () => {
-
-  });
 
   it.skip('should have filter options above the movie list', () => {
 
@@ -49,12 +34,38 @@ describe('Dashboard', () => {
 
 
   //single view
+  it('should be able to change views to a single view after clicking on a movie', () => {
+    cy.visit('http://localhost:3000')
+      .get('#581392')
+      .click()
+        .get('.single-movie')
+  });
+
+  it('should be able to click the X to return to the dashboard view', () => {
+    cy.visit('http://localhost:3000')
+      .get('#581392')
+      .click()
+        .get('.single-movie')
+        .get('.exit-single-movie-view')
+        .click()
+          .get('.dashboard')
+  });
+
   it.skip('should display a backdrop image with title at the top', () => {
 
   });
 
-  it.skip('should contain movie details grouped underneath', () => {
-
+  it('should contain movie details grouped underneath', () => {
+    cy.visit('http://localhost:3000')
+      .get('#581392')
+      .click()
+        .get('.overview')
+        .siblings('.budget')
+        .siblings('.average_rating')
+        .siblings('.runtime')
+        .siblings('.revenue')
+        .siblings('.overrelease_dateview')
+        .siblings('.genres')
   });
 
 });
