@@ -1,14 +1,14 @@
 import Modal from 'react-modal';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import {NavLink} from 'react-router-dom';
 const SingleMovieView = ({selectedMovie, toggleHighlighted}) => {
   let style = {
     backgroundImage: `url(${selectedMovie.backdrop_path})`
   }
   return (
     <section className='single-movie'>
-      <button className='exit-single-movie-view' onClick={toggleHighlighted}>X</button>
+      <NavLink to='/' className='exit-single-movie-view' onClick={toggleHighlighted}>X</NavLink>
       <section className='backdrop' style={style}>
         <h2>{ selectedMovie.title }</h2>
       </section>
