@@ -12,8 +12,7 @@ let singleMovieData;
 const movieDatabase = getData('movies')
 
 const passData = (id) => {
-  console.log('id', id)
-singleMovieData = getData(`movies/${id}`)
+  singleMovieData = getData(`movies/${id}`)
 }
 
 export {movieDatabase, singleMovieData, passData};

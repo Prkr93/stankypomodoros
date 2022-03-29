@@ -8,7 +8,7 @@ import Footer from './footer';
 import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
 import {movieDatabase, singleMovieData, passData} from './apiCalls'
-
+import {Route, NavLink} from 'react-router-dom';
 
 
 
@@ -53,19 +53,19 @@ class App extends Component {
     return (
       <div className='app' >
         <Header />
-        {this.state.movies.length && !this.state.selectedMovie &&
+        <Route exact path='/' render={() =>
           <MainContent
             movieRepo={this.state.movies}
             filterOption={this.state.filterOption}
             toggleHighlighted={this.toggleHighlighted}
           />
-        }
-        {this.state.selectedMovie &&
+        } />
+        <Route path='/movie/:id' render={() =>
           <SingleMovieView
             selectedMovie={this.state.selectedMovie}
             toggleHighlighted={this.toggleHighlighted}
           />
-        }
+        } />
         <Nav />
         <Footer />
       </div>
