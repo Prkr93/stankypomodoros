@@ -11,7 +11,6 @@ import {movieDatabase, singleMovieData, passData} from './apiCalls'
 import {Route, NavLink} from 'react-router-dom';
 
 
-
 class App extends Component {
   constructor() {
     super();
@@ -30,6 +29,12 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const moviePath = window.location.href;
+    const movieId = moviePath.slice(moviePath.length -6)
+    if (movieId > 0) {
+      this.setState({selectedMovie: movieId})
+      passData(movieId)
+    }
     this.fetchData();
   }
 

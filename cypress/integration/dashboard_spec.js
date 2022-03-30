@@ -22,8 +22,6 @@ describe('Dashboard', () => {
       .get('h2')
   });
 
-
-
   it.skip('should have filter options above the movie list', () => {
 
   });
@@ -38,34 +36,9 @@ describe('Dashboard', () => {
     cy.visit('http://localhost:3000')
       .get('#581392')
       .click()
-        .get('.single-movie')
+      .url('http://localhost:3000/581392')
   });
 
-  it('should be able to click the X to return to the dashboard view', () => {
-    cy.visit('http://localhost:3000')
-      .get('#581392')
-      .click()
-        .get('.single-movie')
-        .get('.exit-single-movie-view')
-        .click()
-          .get('.dashboard')
-  });
 
-  it.skip('should display a backdrop image with title at the top', () => {
-
-  });
-
-  it('should contain movie details grouped underneath', () => {
-    cy.visit('http://localhost:3000')
-      .get('#581392')
-      .click()
-        .get('.overview')
-        .siblings('.budget')
-        .siblings('.average_rating')
-        .siblings('.runtime')
-        .siblings('.revenue')
-        .siblings('.overrelease_dateview')
-        .siblings('.genres')
-  });
 
 });
