@@ -15,6 +15,11 @@
       animation-name: slideshow;
       animation-duration: 1s;
     }
+    &.fade {
+      opacity: 0;
+      animation-name: fade;
+      animation-duration: 1s;
+    }
   }
   h2 {
     position: absolute;
@@ -45,9 +50,10 @@
       border: 1px solid black;
       z-index: 10;
       background-color: transparent;
-
+      &:hover{
+        cursor: pointer;
+      }
       &.active {
-
         background-color: black;
       }
     }
@@ -57,4 +63,9 @@
 @keyframes slideshow {
   from  {opacity: 0;}
   to    {opacity: 1;}
+}
+
+@keyframes fate {
+  from  {opacite: 1;}
+  to    {opacity: 0;}
 }
