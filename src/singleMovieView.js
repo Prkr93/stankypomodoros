@@ -1,8 +1,9 @@
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player'
 import ReactDOM from 'react-dom';
 import {NavLink} from 'react-router-dom';
-const SingleMovieView = ({selectedMovie, toggleHighlighted}) => {
+const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => {
   let style = {
     backgroundImage: `url(${selectedMovie.backdrop_path})`
   }
@@ -59,6 +60,11 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted}) => {
           <div className='genres'>
             <h4>Genres: </h4>
             <p>{ selectedMovie.genres }</p>
+          </div>
+        }
+        {!!selectedVideos &&
+          <div className='videos'>
+            <ReactPlayer url={ selectedVideos } />
           </div>
         }
       </section>

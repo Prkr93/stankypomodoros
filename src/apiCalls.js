@@ -9,10 +9,12 @@ const getData = (fetchUrl) => {
   })
 }
 let singleMovieData;
+let singleVideoData;
 const movieDatabase = getData('movies')
 
 const passData = (id) => {
   singleMovieData = getData(`movies/${id}`)
+  singleVideoData = getData(`movies/${id}/videos`)
 }
 
-export {movieDatabase, singleMovieData, passData};
+export {movieDatabase, singleMovieData, passData, singleVideoData};
