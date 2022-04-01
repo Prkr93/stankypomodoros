@@ -42,6 +42,10 @@ header button {
   border-radius: 3px;
   text-align: center;
 }
+header .logo {
+  height: 6em;
+  width: auto;
+}
 
 main {
   position: relative;

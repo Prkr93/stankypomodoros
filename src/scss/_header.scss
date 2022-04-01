@@ -14,4 +14,8 @@ header {
     top: 1.25em;
     @include button($white, $darkBlue);
   }
+  .logo {
+    height: 6em;
+    width: auto;
+  }
 }
