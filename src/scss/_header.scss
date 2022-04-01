@@ -1,12 +1,13 @@
 header {
   background-color: $darkRed;
-  h1 {
-    margin: 0;
-    padding: .5em;
-    a {
-      color: white;
-      text-decoration: none;
-    }
+
+  a {
+    color: white;
+    text-decoration: none;
+    h1 {
+      margin: 0;
+      padding: .5em;
+  }
   }
   button {
     position: absolute;
@@ -14,8 +15,13 @@ header {
     top: 1.25em;
     @include button($white, $darkBlue);
   }
+  .title {
+    display: flex;
+  }
   .logo {
-    height: 6em;
+    margin-left: 1em;
+    margin-top: .25em;
+    height: 4em;
     width: auto;
   }
 }

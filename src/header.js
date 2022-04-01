@@ -6,8 +6,10 @@ const Header = ({toggleHighlighted}) => {
 
   return (
     <header>
-      <h1><NavLink to='/'>Stanky Pomodoros</NavLink></h1>
-      <img className='logo' src={logo} />
+      <NavLink to='/' className='title'>
+        <img className='logo' src={logo} />
+        <h1>Stanky Pomodoros</h1>
+      </NavLink>
       <button>🍔</button>
     </header>
   )
