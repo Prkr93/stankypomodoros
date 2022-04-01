@@ -107,6 +107,43 @@ main {
   cursor: pointer;
 }
 
+.slideshow .images-wrap > div {
+  position: relative;
+}
+.slideshow .each-slide {
+  height: 50vh;
+  background-size: auto 100%;
+}
+@media (min-width: 650px) {
+  .slideshow .each-slide {
+    background-size: 100% auto;
+  }
+}
+.slideshow .each-slide h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 2em 0 1em;
+  margin: 0;
+  font-size: 2.5em;
+  color: #FBFAF8;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.slideshow .each-slide button {
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+  background-color: #D10000;
+  border-radius: 3px;
+}
+.slideshow .each-slide button a {
+  color: #FBFAF8;
+  text-decoration: none;
+}
+.slideshow .each-slide button:hover {
+  cursor: pointer;
+}
 .slideshow .each-slide > div {
   display: flex;
   align-items: center;
@@ -209,6 +246,10 @@ main {
     font-size: 1.5em;
     padding-left: 3em;
   }
+}
+.single-movie .tagline {
+  padding: 0 1em;
+  text-align: center;
 }
 .single-movie .single-movie-info > * {
   padding: 1em;

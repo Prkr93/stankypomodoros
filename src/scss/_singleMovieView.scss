@@ -59,20 +59,11 @@
       }
     }
   }
+  .tagline {
+    padding: 0 1em;
+    text-align: center;
+  }
   .single-movie-info{
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-    // > * {
-    //   padding: 1em;
-    //   width: 80%;
-    //   @include breakpoint(medium) {
-    //     width: 50%;
-    //   }
-    //   @include breakpoint(large) {
-    //     width: 35%;
-    //   }
-    // }
     > * {
       padding: 1em;
     }
