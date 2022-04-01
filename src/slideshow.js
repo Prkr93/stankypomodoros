@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Slide} from 'react-slideshow-image';
 
+
 let timer;
 
 class Slideshow extends Component {
@@ -12,21 +13,10 @@ class Slideshow extends Component {
     }
   }
 
-  componentDidMount() {
-    // timer = setTimeout(() => {
-    //   this.changeSlide(1)
-    // }, 5000)
-
-  }
-
   componentDidUpdate(prevProps) {
     if(prevProps.topRated !== this.props.topRated) {
       this.setState({topRated: this.props.topRated});
     }
-    // if(prevProps.refreshSlideshow !== this.props.refreshSlideshow) {
-    //   this.setState({refreshSlideshow: !this.state.refreshSlideshow})
-    // }
-    // this.setState({refreshSlideshow: !this.state.refreshSlideshow})
   }
 
   render() {
@@ -46,7 +36,7 @@ class Slideshow extends Component {
     });
     return (
       <div>
-        <Slide className='slideshow'>
+        <Slide className='rtl slideshow'>
           {topMovies}
         </Slide>
       </div>
