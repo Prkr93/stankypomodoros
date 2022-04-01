@@ -1,60 +1,63 @@
 .slideshow {
-  height: 50vh;
-  position: relative;
-  article {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  .images-wrap > div {
+    position: relative;
+  }
+  .each-slide {
+    height: 50vh;
     background-size: auto 100%;
-    opacity: 0;
     @include breakpoint(tablet) {
       background-size: 100% auto;
     }
-    &.active {
-      opacity: 1;
-      animation-name: slideshow;
-      animation-duration: 1s;
+    h2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 2em 0 1em;
+      margin: 0;
+      font-size: 2.5em;
+      color: $white;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .5);
     }
-  }
-  h2 {
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
-    margin: 0;
-    font-size: 2.5em;
-    @include breakpoint(medium) {
-      left: 2em;
-    }
-  }
-  button {
-    position: absolute;
-    bottom: 3.5em;
-    right: 2em;
-  }
-  .ticker {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    bottom: 1em;
-    justify-content: center;
-    [class^='tick'] {
-      margin: 0 .25em;
-      border-radius: 100px;
-      width: 1em;
-      height: 1em;
-      border: 1px solid black;
-      z-index: 10;
-      background-color: transparent;
-
-      &.active {
-
-        background-color: black;
+    button {
+      position: absolute;
+      bottom: 1em;
+      right: 2em;
+      background-color: $red;
+      border-radius: 3px;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+        cursor: pointer;
       }
     }
   }
+
+  .each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 350px;
+  }
+
+  .each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+  }
+
 }
 
 @keyframes slideshow {
   from  {opacity: 0;}
   to    {opacity: 1;}
+}
+
+@keyframes fate {
+  from  {opacite: 1;}
+  to    {opacity: 0;}
 }

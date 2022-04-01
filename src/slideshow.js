@@ -1,31 +1,40 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {Slide} from 'react-slideshow-image';
 
-const Slideshow = ({topRated}) => {
 
-  let topMovies = topRated.map((movie, index) => {
+const Slideshow = (props) => {
+
+  let topMovies = props.topRated.map((movie, index) => {
     let style = {
       backgroundImage: `url(${movie.backdrop_path})`
     }
+
     return (
-      <article className={(index === 0 ? 'active' : '')} style={style} key={movie.id}>
-        <h2>{movie.title}</h2>
-        <button>View Info</button>
-      </article>
+      <div style={style} className={'each-slide'} key={movie.id}>
+
+          <h2>{movie.title}</h2>
+          <button><Link id={movie.id} onClick={props.toggleHighlighted} to={`/movie/${movie.id}`}>View Info</Link></button>
+
+      </div>
     )
   });
-
   return (
-    <section className='slideshow'>
-      <section className='slider'>{topMovies}</section>
-      <section className='ticker'>
-        <div className='tick-one active'></div>
-        <div className='tick-two'></div>
-        <div className='tick-three'></div>
-        <div className='tick-four'></div>
-        <div className='tick-five'></div>
-      </section>
-    </section>
+    <div>
+      <Slide className='slideshow'>
+        {topMovies}
+      </Slide>
+    </div>
   )
+
 }
+
+// <section className='ticker'>
+//   <div className='tick-0 active' onClick={() => {this.changeSlide(0, true)}}></div>
+//   <div className='tick-1' onClick={() => {this.changeSlide(1, true)}}></div>
+//   <div className='tick-2' onClick={() => {this.changeSlide(2, true)}}></div>
+//   <div className='tick-3' onClick={() => {this.changeSlide(3, true)}}></div>
+//   <div className='tick-4' onClick={() => {this.changeSlide(4, true)}}></div>
+// </section>
 
 export default Slideshow;

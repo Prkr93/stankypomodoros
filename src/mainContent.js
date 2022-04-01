@@ -7,6 +7,7 @@ const MainContent = ({ movieRepo, filterOption, selectedMovie, toggleHighlighted
   return (
     <main>
       <Dashboard
+        exact path={'/'}
         movieRepo={movieRepo}
         filterOption={filterOption}
         toggleHighlighted={toggleHighlighted}
