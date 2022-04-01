@@ -1,47 +1,32 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {Slide} from 'react-slideshow-image';
 
 
-let timer;
+const Slideshow = (props) => {
 
-class Slideshow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      topRated: []
+  let topMovies = props.topRated.map((movie, index) => {
+    let style = {
+      backgroundImage: `url(${movie.backdrop_path})`
     }
-  }
 
-  componentDidUpdate(prevProps) {
-    if(prevProps.topRated !== this.props.topRated) {
-      this.setState({topRated: this.props.topRated});
-    }
-  }
-
-  render() {
-    let topMovies = this.state.topRated.map((movie, index) => {
-      let style = {
-        backgroundImage: `url(${movie.backdrop_path})`
-      }
-      console.log(style)
-      return (
-        <div style={style} className={(index === 0 ? `each-slide slide-${index} active` : `each-slide slide-${index}`)} key={movie.id}>
-
-            <h2>{movie.title}</h2>
-            <button><Link id={movie.id} to={`/movie/${movie.id}`}>View Info</Link></button>
-
-        </div>
-      )
-    });
     return (
-      <div>
-        <Slide className='rtl slideshow'>
-          {topMovies}
-        </Slide>
+      <div style={style} className={'each-slide'} key={movie.id}>
+
+          <h2>{movie.title}</h2>
+          <button><Link id={movie.id} onClick={props.toggleHighlighted} to={`/movie/${movie.id}`}>View Info</Link></button>
+
       </div>
     )
-  }
+  });
+  return (
+    <div>
+      <Slide className='slideshow'>
+        {topMovies}
+      </Slide>
+    </div>
+  )
+
 }
 
 // <section className='ticker'>

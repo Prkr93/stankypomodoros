@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <div className='app' >
-        <Header />
+        <Header toggleHighlighted={this.toggleHighlighted} />
         <Route exact path='/' render={() =>
           <MainContent
             movieRepo={this.state.movies}
