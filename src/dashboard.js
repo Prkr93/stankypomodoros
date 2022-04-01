@@ -21,7 +21,7 @@ const Dashboard = ({ movieRepo, filterOption, toggleHighlighted }) => {
 
   return (
     <section className='dashboard'>
-      <Slideshow movieRepo={movieRepo} topRated={topRated} />
+      <Slideshow exact path='/' toggleHighlighted={toggleHighlighted} topRated={topRated} />
       <Filter />
       <MovieList movieRepo={movieRepo} filterOption={filterOption} toggleHighlighted={toggleHighlighted} />
     </section>
