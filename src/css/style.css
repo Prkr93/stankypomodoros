@@ -24,13 +24,13 @@ footer a:visited {
 header {
   background-color: #9A031E;
 }
-header h1 {
-  margin: 0;
-  padding: 0.5em;
-}
-header h1 a {
+header a {
   color: white;
   text-decoration: none;
+}
+header a h1 {
+  margin: 0;
+  padding: 0.5em;
 }
 header button {
   position: absolute;
@@ -41,6 +41,15 @@ header button {
   padding: 0.5em 1em;
   border-radius: 3px;
   text-align: center;
+}
+header .title {
+  display: flex;
+}
+header .logo {
+  margin-left: 1em;
+  margin-top: 0.25em;
+  height: 4em;
+  width: auto;
 }
 
 main {

@@ -1,15 +1,15 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import logo from './logo-red.png'
 
 const Header = ({toggleHighlighted}) => {
 
   return (
     <header>
-<<<<<<< HEAD
-      <h1><NavLink to='/' onClick={toggleHighlighted}>Stanky Pomodoros</NavLink></h1>
-=======
-      <h1><NavLink  to='/' onClick={toggleHighlighted} >Stanky Pomodoros</NavLink></h1>
->>>>>>> main
+      <NavLink to='/' className='title'>
+        <img className='logo' src={logo} />
+        <h1>Stanky Pomodoros</h1>
+      </NavLink>
       <button>🍔</button>
     </header>
   )
