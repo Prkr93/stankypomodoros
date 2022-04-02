@@ -9,7 +9,7 @@ const toggleFilterChange = (e) => {
   return (
     <section className='filter'>
       <article>
-        <label htmlFor="filters">Filter:</label>
+        <label htmlFor="filters">Filter: </label>
         <select onChange={toggleFilterChange} name="filters" id="filters">
           <option value="bangersToStankers">Bangers To Stankers</option>
           <option value="stankersToBangers">Stankers To Bangers</option>
