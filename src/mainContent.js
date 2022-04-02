@@ -17,6 +17,6 @@ const MainContent = ({ movieRepo, filterOption, selectedMovie, toggleHighlighted
       />
     </main>
   )
-
+}
 
 export default MainContent;
