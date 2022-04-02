@@ -29,10 +29,10 @@ const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter })
         toggleHighlighted={toggleHighlighted}
         topRated={topRated}
       />
-      <Filter changeFilter={changeFilter} />
+      <Filter movieRepo={movieRepo} changeFilter={changeFilter} />
       <MovieList
         movieRepo={movieRepo}
-        filterOption={filterOption} 
+        filterOption={filterOption}
         toggleHighlighted={toggleHighlighted}
       />
     </section>

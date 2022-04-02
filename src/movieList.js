@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieCard from './movieCard';
 
-const MovieList = ({ movieRepo, filterOption, toggleHighlighted }) => {
+const MovieList = ({ movieRepo, toggleHighlighted }) => {
 
   const movieCards = movieRepo.map(movie => <MovieCard
                                               movie={movie}

@@ -17,12 +17,14 @@ class App extends Component {
       filterOption: 'bangersToStankers',
       selectedMovie: false,
       selectedVideos: false,
+      // filteredMovies: []
     }
   }
 
   fetchData() {
     Promise.all([movieDatabase, singleMovieData, singleVideoData]).then(data => {
        this.setState({ movies: data[0].movies });
+       // this.setState({ filteredMovies: data[0].movies })
        (data[1] && this.setState({ selectedMovie: data[1].movie }));
        (data[2] && this.getHighlightedVideo(data[2]))
 
