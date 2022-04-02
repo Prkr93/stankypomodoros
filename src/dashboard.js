@@ -3,8 +3,6 @@ import Slideshow from './slideshow';
 import Filter from './filter';
 import MovieList from './movieList';
 
-
-
 const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter, filteredMovies, searchThroughMovies }) => {
   let topRated = movieRepo.sort((a, b) => b.average_rating - a.average_rating).slice(0, 5);
 

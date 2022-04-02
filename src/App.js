@@ -75,7 +75,7 @@ class App extends Component {
             filterOption={this.state.filterOption}
             toggleHighlighted={this.toggleHighlighted}
             changeFilter={this.changeFilter}
-            filteredMovies={this.filteredMovies}
+            filteredMovies={this.state.filteredMovies}
             searchThroughMovies={this.searchThroughMovies}
           />
         } />
