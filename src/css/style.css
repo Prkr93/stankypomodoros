@@ -56,6 +56,16 @@ main {
   position: relative;
 }
 
+.filter {
+  background: linear-gradient(#9A031E, #0A122A, #0A122A, #0A122A);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.filter article {
+  padding: 3em 1em 2em;
+}
+
 .movie-list {
   display: flex;
   flex-wrap: wrap;

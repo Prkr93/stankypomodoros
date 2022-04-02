@@ -1,0 +1,9 @@
+.filter {
+  background: linear-gradient($darkRed, $darkBlue, $darkBlue, $darkBlue);
+  color: white;
+  display: flex;
+  justify-content: center;
+  article {
+    padding: 3em 1em 2em;
+  }
+}
