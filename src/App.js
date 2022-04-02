@@ -30,7 +30,7 @@ class App extends Component {
   }
   componentDidMount() {
     const moviePath = window.location.href;
-    const movieId = moviePath.slice(moviePath.length -6)
+    const movieId = moviePath.slice(moviePath.length - 6)
     if (movieId > 0) {
       this.setState({selectedMovie: movieId})
       passData(movieId)
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   changeFilter = (e) => {
-    this.setState({filterOption: e.value })
+    this.setState({filterOption: e.target.value })
   }
 
   getHighlightedVideo(videoData) {
