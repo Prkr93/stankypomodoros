@@ -77,13 +77,13 @@ main {
 }
 @media (min-width: 1200px) {
   .movie-list {
-    max-width: 1200px;
+    max-width: 90%;
     margin: auto;
   }
 }
 .movie-list .movie-card {
   margin: 1%;
-  height: 8em;
+  height: 7em;
   width: 80%;
 }
 @media (min-width: 480px) {
@@ -104,6 +104,12 @@ main {
 @media (min-width: 1200px) {
   .movie-list .movie-card {
     width: 20%;
+  }
+}
+@media (min-width: 1400px) {
+  .movie-list .movie-card {
+    width: 16%;
+    height: 6em;
   }
 }
 
