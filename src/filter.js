@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './searchBar';
 
-const Filter = ({movieRepo, changeFilter}) => {
+const Filter = ({movieRepo, changeFilter, searchThroughMovies}) => {
 
   const toggleFilterChange = (e) => {
     changeFilter(e)
@@ -18,7 +18,7 @@ const Filter = ({movieRepo, changeFilter}) => {
           <option value="zToA">Z to A</option>
         </select>
       </article>
-      <SearchBar movieRepo={movieRepo} />
+      <SearchBar movieRepo={movieRepo} searchThroughMovies={searchThroughMovies} />
     </section>
   )
 }

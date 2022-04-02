@@ -5,7 +5,7 @@ import MovieList from './movieList';
 
 
 
-const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter }) => {
+const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter, filteredMovies, searchThroughMovies }) => {
   let topRated = movieRepo.sort((a, b) => b.average_rating - a.average_rating).slice(0, 5);
 
   if (filterOption === 'bangersToStankers') {
@@ -29,11 +29,15 @@ const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter })
         toggleHighlighted={toggleHighlighted}
         topRated={topRated}
       />
-      <Filter movieRepo={movieRepo} changeFilter={changeFilter} />
+      <Filter
+        movieRepo={movieRepo}
+        changeFilter={changeFilter}
+        searchThroughMovies={searchThroughMovies}
+      />
       <MovieList
         movieRepo={movieRepo}
-        filterOption={filterOption}
         toggleHighlighted={toggleHighlighted}
+        filteredMovies={filteredMovies}
       />
     </section>
   )

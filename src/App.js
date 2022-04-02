@@ -17,14 +17,14 @@ class App extends Component {
       filterOption: 'bangersToStankers',
       selectedMovie: false,
       selectedVideos: false,
-      // filteredMovies: []
+      filteredMovies: []
     }
   }
 
   fetchData() {
     Promise.all([movieDatabase, singleMovieData, singleVideoData]).then(data => {
        this.setState({ movies: data[0].movies });
-       // this.setState({ filteredMovies: data[0].movies })
+       this.setState({ filteredMovies: data[0].movies });
        (data[1] && this.setState({ selectedMovie: data[1].movie }));
        (data[2] && this.getHighlightedVideo(data[2]))
 
@@ -61,6 +61,10 @@ class App extends Component {
     }
   }
 
+  searchThroughMovies = (moviesToDisplay) => {
+    this.setState({filteredMovies: moviesToDisplay});
+  }
+
   render() {
     return (
       <div className='app' >
@@ -71,6 +75,8 @@ class App extends Component {
             filterOption={this.state.filterOption}
             toggleHighlighted={this.toggleHighlighted}
             changeFilter={this.changeFilter}
+            filteredMovies={this.filteredMovies}
+            searchThroughMovies={this.searchThroughMovies}
           />
         } />
         <Route path='/movie/:id' render={() =>

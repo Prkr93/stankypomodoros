@@ -1,22 +1,21 @@
 import React from 'react';
 
-const SearchBar = ({movieRepo}) => {
+const SearchBar = ({movieRepo, searchThroughMovies}) => {
 
   const filterBySearchBar = (e) => {
-    console.log(typeof e.target.value)
+    console.log(e.target.value)
 
-    const filteredMovies = movieRepo.filter(movie => {
-
-      console.log(movie)
+    const moviesToDisplay = movieRepo.filter(movie => {
       let searchTerm = e.target.value.toUpperCase();
       let absTitle = movie.title.toUpperCase()
-      console.log(searchTerm)
-      if (movie.title.includes(searchTerm)) {
-        console.log(searchTerm, absTitle)
+
+      if (absTitle.includes(searchTerm)) {
         return movie
       }
     });
-    console.log(filteredMovies)
+
+    console.log(moviesToDisplay)
+    searchThroughMovies(moviesToDisplay)
   }
 
   return (
