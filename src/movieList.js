@@ -1,13 +1,16 @@
 import React from 'react';
 import MovieCard from './movieCard';
 
-const MovieList = ({ movieRepo, filterOption, toggleHighlighted }) => {
+const MovieList = ({ movieRepo, toggleHighlighted, filteredMovies }) => {
 
-  const movieCards = movieRepo.map(movie => <MovieCard
-                                              movie={movie}
-                                              key={movie.id}
-                                              toggleHighlighted={toggleHighlighted} />);
-
+  let repo = filteredMovies ? filteredMovies : movieRepo;
+console.log(filteredMovies, '<<filtered')
+  const movieCards = repo.map(movie => <MovieCard
+                              movie={movie}
+                              key={movie.id}
+                              toggleHighlighted={toggleHighlighted}
+                              />
+                            );
   return (
     <section className='movie-list'> {movieCards} </section>
   )

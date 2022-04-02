@@ -1,14 +1,15 @@
 import React from 'react';
+import SearchBar from './searchBar';
 
-const Filter = ({changeFilter}) => {
+const Filter = ({movieRepo, changeFilter, searchThroughMovies}) => {
 
-const toggleFilterChange = (e) => {
-  changeFilter(e)
-}
+  const toggleFilterChange = (e) => {
+    changeFilter(e)
+  }
 
   return (
     <section className='filter'>
-      <article>
+      <article className='filter-options'>
         <label htmlFor="filters">Filter: </label>
         <select onChange={toggleFilterChange} name="filters" id="filters">
           <option value="bangersToStankers">Bangers To Stankers</option>
@@ -17,6 +18,7 @@ const toggleFilterChange = (e) => {
           <option value="zToA">Z to A</option>
         </select>
       </article>
+      <SearchBar movieRepo={movieRepo} searchThroughMovies={searchThroughMovies} />
     </section>
   )
 }
