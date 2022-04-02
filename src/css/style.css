@@ -83,7 +83,6 @@ main {
 }
 .movie-list .movie-card {
   margin: 1%;
-  height: 7em;
   width: 80%;
 }
 @media (min-width: 480px) {
@@ -109,7 +108,6 @@ main {
 @media (min-width: 1400px) {
   .movie-list .movie-card {
     width: 16%;
-    height: 6em;
   }
 }
 
@@ -127,6 +125,10 @@ main {
   text-align: center;
   color: #FBFAF8;
   padding: 0.5em 0;
+}
+.movie-card img {
+  width: 100%;
+  height: auto;
 }
 .movie-card:hover {
   cursor: pointer;
