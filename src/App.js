@@ -50,6 +50,11 @@ class App extends Component {
     this.setState({ selectedVideos: videos });
   }
 
+  changeFilter(option) {
+    console.log(option)
+    this.setState({filterOption: option })
+  }
+
   toggleHighlighted = (e) => {
 
     if (this.state.selectedMovie) {
@@ -71,6 +76,7 @@ class App extends Component {
             movieRepo={this.state.movies}
             filterOption={this.state.filterOption}
             toggleHighlighted={this.toggleHighlighted}
+            changeFilter={this.changeFilter}
           />
         } />
         <Route path='/movie/:id' render={() =>

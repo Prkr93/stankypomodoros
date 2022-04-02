@@ -5,12 +5,11 @@ import MovieList from './movieList';
 
 
 
-const Dashboard = ({ movieRepo, filterOption, toggleHighlighted }) => {
+const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter }) => {
   let topRated = movieRepo.sort((a, b) => b.average_rating - a.average_rating).slice(0, 5);
 
   if (filterOption === 'bangersToStankers') {
     let bangersToStankers = movieRepo.sort((a, b) => b.average_rating - a.average_rating);
-    // topRated = bangersToStankers.slice(0, 5);
   }
   if (filterOption === 'stankersToBangers') {
     let stankersToBangers = movieRepo.sort((a, b) => a.average_rating - b.average_rating);
@@ -26,7 +25,9 @@ const Dashboard = ({ movieRepo, filterOption, toggleHighlighted }) => {
   return (
     <section className='dashboard'>
       <Slideshow exact path='/' toggleHighlighted={toggleHighlighted} topRated={topRated} />
-      <Filter />
+      <Filter
+        changeFilter={changeFilter}
+      />
       <MovieList movieRepo={movieRepo} filterOption={filterOption} toggleHighlighted={toggleHighlighted} />
     </section>
   )
