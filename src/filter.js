@@ -4,7 +4,7 @@ const Filter = () => {
 
 
   return (
-    <section> filter bob </section>
+    <section> filter </section>
   )
 }
 
