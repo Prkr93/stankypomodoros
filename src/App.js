@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Modal from 'react-modal';
 import './css/style.css';
 import Header from './header';
 import MainContent from './mainContent';
@@ -9,7 +8,6 @@ import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
 import {movieDatabase, singleMovieData, passData, singleVideoData} from './apiCalls'
 import {Route, NavLink} from 'react-router-dom';
-
 
 class App extends Component {
   constructor() {
@@ -25,7 +23,6 @@ class App extends Component {
   fetchData() {
     Promise.all([movieDatabase, singleMovieData, singleVideoData]).then(data => {
        this.setState({ movies: data[0].movies });
-       // (data[1] && this.getHighlighted(data[1]))
        (data[1] && this.setState({ selectedMovie: data[1].movie }));
        (data[2] && this.getHighlightedVideo(data[2]))
 
@@ -41,26 +38,21 @@ class App extends Component {
     this.fetchData();
   }
 
-  getHighlighted(singleData) {
-
+  changeFilter = (e) => {
+    this.setState({filterOption: e.value })
   }
+
   getHighlightedVideo(videoData) {
     let videoKeys = videoData.videos.map(video => video.key)
     let videos = `https://www.youtube.com/watch?v=${videoKeys[0]}`
     this.setState({ selectedVideos: videos });
   }
 
-  changeFilter(option) {
-    console.log(option)
-    this.setState({filterOption: option })
-  }
 
   toggleHighlighted = (e) => {
-
     if (this.state.selectedMovie) {
       this.setState({selectedMovie: false, selectedVideos: false})
     } else {
-
       let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
       passData(e.target.id);
       this.fetchData();

@@ -3,8 +3,7 @@ import React from 'react';
 const Filter = ({changeFilter}) => {
 
 const toggleFilterChange = (e) => {
-  console.log(e.target.value)
-  changeFilter(e.target.value)
+  changeFilter(e.target)
 }
 
   return (
