@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 const MovieCard = ({ movie, toggleHighlighted }) => {
+
 let style;
   if (movie.backdrop_path.includes('NoPhotoAvailable')) {
     style = {
