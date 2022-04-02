@@ -36,11 +36,15 @@ header button {
   position: absolute;
   right: 1em;
   top: 1.25em;
+  z-index: 100;
   color: #FBFAF8;
   background-color: #0A122A;
   padding: 0.5em 1em;
   border-radius: 3px;
   text-align: center;
+}
+header button.active {
+  position: fixed;
 }
 header .title {
   display: flex;
@@ -73,13 +77,12 @@ main {
 }
 @media (min-width: 1200px) {
   .movie-list {
-    max-width: 1200px;
+    max-width: 90%;
     margin: auto;
   }
 }
 .movie-list .movie-card {
   margin: 1%;
-  height: 8em;
   width: 80%;
 }
 @media (min-width: 480px) {
@@ -102,6 +105,11 @@ main {
     width: 20%;
   }
 }
+@media (min-width: 1400px) {
+  .movie-list .movie-card {
+    width: 16%;
+  }
+}
 
 .movie-card {
   position: relative;
@@ -118,8 +126,41 @@ main {
   color: #FBFAF8;
   padding: 0.5em 0;
 }
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
 .movie-card:hover {
   cursor: pointer;
+}
+
+nav {
+  display: none;
+  position: fixed;
+  width: 10em;
+  height: 100vh;
+  background-color: #ccdbf8;
+  top: 0;
+  right: 0;
+  padding-top: 4em;
+  box-shadow: 2px 0px 8px #0A122A inset;
+}
+nav a {
+  color: #0A122A;
+  display: block;
+  padding: 0.5em 1em;
+  text-align: right;
+  text-decoration: none;
+}
+nav a:visited {
+  color: #9A031E;
+}
+nav a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+nav.active {
+  display: block;
 }
 
 .slideshow .images-wrap > div {
@@ -138,7 +179,7 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 0 2em 0 1em;
+  padding: 0.125em 2em 0.125em 1em;
   margin: 0;
   font-size: 2.5em;
   color: #FBFAF8;

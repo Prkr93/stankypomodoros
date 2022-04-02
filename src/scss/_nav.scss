@@ -1,0 +1,29 @@
+nav {
+  display: none;
+  position: fixed;
+  width: 10em;
+  height: 100vh;
+  background-color: scale-color($blue, $lightness: 60%);
+  top: 0;
+  right: 0;
+  padding-top: 4em;
+  box-shadow: 2px 0px 8px $darkBlue inset;
+  a {
+    color: $darkBlue;
+    display: block;
+    padding: .5em 1em;
+    text-align: right;
+    text-decoration: none;
+    &:visited {
+      color: $darkRed;
+    }
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  &.active {
+    display: block;
+  }
+
+}

@@ -3,12 +3,12 @@
   flex-wrap: wrap;
   justify-content: space-around;
   @include breakpoint(wide) {
-    max-width: 1200px;
+    max-width: 90%;
     margin: auto;
   }
   .movie-card {
     margin: 1%;
-    height: 8em;
+    //height: 7em;
     width: 80%;
     @include breakpoint(small) {
       width: 45%;
@@ -21,6 +21,10 @@
     }
     @include breakpoint(wide) {
       width: 20%;
+    }
+    @include breakpoint(wider) {
+      width: 16%;
+      //height: 6em;
     }
   }
 }
