@@ -4,9 +4,14 @@ import ReactPlayer from 'react-player'
 import ReactDOM from 'react-dom';
 import {NavLink} from 'react-router-dom';
 const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => {
-  let style = {
-    backgroundImage: `url(${selectedMovie.backdrop_path})`
-  }
+
+  let style;
+
+  selectedMovie && selectedMovie.backdrop_path.includes('NoPhotoAvailable') ?
+    style = { backgroundImage: `url('https://i.imgflip.com/6b66bi.jpg')`} :
+    style = { backgroundImage: `url(${selectedMovie.backdrop_path})` }
+
+
   return (
     <section className='single-movie'>
       <NavLink to='/' className='exit-single-movie-view' onClick={toggleHighlighted}>X</NavLink>
