@@ -10,8 +10,8 @@ const MovieCard = ({ movie, toggleHighlighted }) => {
 
   return (
     <NavLink id={movie.id} className='movie-card' to={`movie/${movie.id}`} onClick={toggleHighlighted}>
-      <img src={url} />
-      <h3>{movie.title}</h3>
+      <img src={url} onClick={toggleHighlighted} />
+      <h3 onClick={toggleHighlighted}>{movie.title}</h3>
     </NavLink>
   )
 }

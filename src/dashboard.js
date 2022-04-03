@@ -7,16 +7,16 @@ const Dashboard = ({ movieRepo, filterOption, toggleHighlighted, changeFilter, f
   let topRated = movieRepo.sort((a, b) => b.average_rating - a.average_rating).slice(0, 5);
 
   if (filterOption === 'bangersToStankers') {
-    let bangersToStankers = movieRepo.sort((a, b) => b.average_rating - a.average_rating);
+    let bangersToStankers = filteredMovies.sort((a, b) => b.average_rating - a.average_rating);
   }
   if (filterOption === 'stankersToBangers') {
-    let stankersToBangers = movieRepo.sort((a, b) => a.average_rating - b.average_rating);
+    let stankersToBangers = filteredMovies.sort((a, b) => a.average_rating - b.average_rating);
   }
   if (filterOption === 'aToZ') {
-    let aToZ = movieRepo.sort((a, b) => a.title.localeCompare(b.title))
+    let aToZ = filteredMovies.sort((a, b) => a.title.localeCompare(b.title))
   }
   if (filterOption === 'zToA') {
-    let aToZ = movieRepo.sort((a, b) => b.title.localeCompare(a.title))
+    let aToZ = filteredMovies.sort((a, b) => b.title.localeCompare(a.title))
   }
 
 

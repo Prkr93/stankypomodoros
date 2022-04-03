@@ -12,7 +12,7 @@ const Header = ({toggleHighlighted}) => {
 
   return (
     <header>
-      <NavLink to='/' className='title'>
+      <NavLink to='/' className='title' onClick={toggleHighlighted}>
         <img className='logo' src={logo} />
         <h1>Stanky Pomodoros</h1>
       </NavLink>
