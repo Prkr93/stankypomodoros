@@ -44,7 +44,7 @@ class App extends Component {
     this.setState({filterOption: e.target.value })
   }
 
-  getHighlightedVideo(videoData) {
+  getHighlightedVideo = (videoData) => {
     let videoKeys = videoData.videos.map(video => video.key)
     let videos = `https://www.youtube.com/watch?v=${videoKeys[0]}`
     this.setState({ selectedVideos: videos });
@@ -52,11 +52,14 @@ class App extends Component {
 
 
   toggleHighlighted = (e) => {
+    const movieToHighLight = e.target.closest('.movie-card');
     if (this.state.selectedMovie) {
+      console.log('yolo')
       this.setState({selectedMovie: false, selectedVideos: false})
     } else {
-      let highlightedMovie = this.state.movies.find(movie => movie.id == e.target.id);
-      passData(e.target.id);
+      let highlightedMovie = this.state.movies.find(movie => movie.id == movieToHighLight.id);
+      console.log(highlightedMovie, '<<<highlightedMovie')
+      passData(movieToHighLight.id);
       this.fetchData();
     }
   }
@@ -69,6 +72,7 @@ class App extends Component {
     return (
       <div className='app' >
         <Header toggleHighlighted={this.toggleHighlighted} />
+        <div className='error'></div>
         <Route exact path='/' render={() =>
           <MainContent
             movieRepo={this.state.movies}
