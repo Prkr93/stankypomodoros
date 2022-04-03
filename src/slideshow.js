@@ -14,7 +14,7 @@ const Slideshow = (props) => {
       <div style={style} className={'each-slide'} key={movie.id}>
 
           <h2>{movie.title}</h2>
-          <button><Link id={movie.id} onClick={props.toggleHighlighted} to={`/movie/${movie.id}`}>View Info</Link></button>
+          <button className='movie-id' id={movie.id}><Link onClick={props.toggleHighlighted} to={`/movie/${movie.id}`}>View Info</Link></button>
 
       </div>
     )

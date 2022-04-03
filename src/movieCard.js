@@ -9,7 +9,7 @@ const MovieCard = ({ movie, toggleHighlighted }) => {
     url = `${movie.backdrop_path}`;
 
   return (
-    <NavLink id={movie.id} className='movie-card' to={`movie/${movie.id}`} onClick={toggleHighlighted}>
+    <NavLink id={movie.id} className='movie-card movie-id' to={`movie/${movie.id}`} onClick={toggleHighlighted}>
       <img src={url} onClick={toggleHighlighted} />
       <h3 onClick={toggleHighlighted}>{movie.title}</h3>
     </NavLink>
