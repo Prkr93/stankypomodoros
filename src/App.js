@@ -54,11 +54,9 @@ class App extends Component {
   toggleHighlighted = (e) => {
     const movieToHighLight = e.target.closest('.movie-card');
     if (this.state.selectedMovie) {
-      console.log('yolo')
       this.setState({selectedMovie: false, selectedVideos: false})
     } else {
       let highlightedMovie = this.state.movies.find(movie => movie.id == movieToHighLight.id);
-      console.log(highlightedMovie, '<<<highlightedMovie')
       passData(movieToHighLight.id);
       this.fetchData();
     }
