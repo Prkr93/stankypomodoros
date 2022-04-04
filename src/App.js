@@ -27,9 +27,9 @@ class App extends Component {
        this.setState({ filteredMovies: data[0].movies });
        (data[1] && this.setState({ selectedMovie: data[1].movie }));
        (data[2] && this.getHighlightedVideo(data[2]))
-
     })
   }
+
   componentDidMount() {
     const moviePath = window.location.href;
     const movieId = moviePath.slice(moviePath.length - 6)

@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom';
 import logo from './logo-red.png'
 
 const Header = ({toggleHighlighted}) => {
-
   const toggleNavBar = (e) => {
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');

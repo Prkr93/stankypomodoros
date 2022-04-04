@@ -13,7 +13,6 @@
     font-weight: bold;
     font-size: 1.25em;
   }
-
   .backdrop {
     background-position: center top;
     background-size: 100% auto;
@@ -71,11 +70,7 @@
     font-weight: bold;
     font-family: "Bungee Shade", cursive;
   }
-
-
-
   .single-movie-info{
-
     padding: 1em;
     > div {
       width: 80%;
@@ -86,9 +81,6 @@
       }
     }
 
-
-
-
     @include breakpoint(medium) {
       display: flex;
       justify-content: space-around;
@@ -98,11 +90,9 @@
         width: 50%;
       }
     }
-
     .movie-details {
       padding: 1em;
     }
-
     .details {
       padding: 1em;
       display: flex;
@@ -112,16 +102,13 @@
         padding: 1em;
       }
     }
-
     .videos > div {
       margin: 0 auto 2em;
       width: auto !important;
     }
-
     .pomodoros {
       max-width: 1em;
       margin-left: .25em;
     }
-
   }
 }

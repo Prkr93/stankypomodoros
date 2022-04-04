@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SearchBar = ({movieRepo, searchThroughMovies}) => {
-
   const filterBySearchBar = (e) => {
     const moviesToDisplay = movieRepo.filter(movie => {
       let searchTerm = e.target.value.toUpperCase();
