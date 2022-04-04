@@ -117,46 +117,10 @@
       width: auto !important;
     }
 
-    // @media (max-width: map-get($breakpoints, small) + 1) {
-    //   img {
-    //     width: 60%;
-    //     margin: auto;
-    //   }
-    // }
-
-    // @include breakpoint(small) {
-    //   display: flex;
-    //   flex-wrap: wrap;
-    //   justify-content: space-around;
-    // }
-
-    // img {
-    //   @include breakpoint(small) {
-    //     width: 50%;
-    //   }
-    //   @include breakpoint(medium) {
-    //     width: 40%;
-    //   }
-    //   @include breakpoint(large) {
-    //     width: 30%;
-    //   }
-    //   @include breakpoint(wide) {
-    //     width: 25%;
-    //   }
-    // }
-
-
-
-    // div {
-    //   display: flex;
-    //   align-items: center;
-    //   h4 {
-    //     margin: 1em 0;
-    //   }
-    //   p {
-    //     padding-left: .5em;
-    //   }
-    // }
+    .pomodoros {
+      max-width: 1em;
+      margin-left: .25em;
+    }
 
   }
 }

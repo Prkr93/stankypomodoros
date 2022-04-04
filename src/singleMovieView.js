@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import ReactDOM from 'react-dom';
 import {NavLink} from 'react-router-dom';
-// import bubblegum from './bubblegum'
+import logoWhite from './logo-white.png';
 const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => {
 
 
@@ -53,7 +53,7 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
                 <h4>Rating: </h4>
                 <p>
                   { selectedMovie.average_rating.toFixed(2) }
-                  <img src='./logo-white.png'/>
+                  <img src={logoWhite} className='pomodoros' />
                 </p>
               </div>
             }

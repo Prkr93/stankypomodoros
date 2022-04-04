@@ -348,3 +348,7 @@ nav.active {
   margin: 0 auto 2em;
   width: auto !important;
 }
+.single-movie .single-movie-info .pomodoros {
+  max-width: 1em;
+  margin-left: 0.25em;
+}
