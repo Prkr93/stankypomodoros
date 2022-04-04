@@ -4,10 +4,13 @@ import ReactPlayer from 'react-player'
 import ReactDOM from 'react-dom';
 import {NavLink} from 'react-router-dom';
 import logoWhite from './logo-white.png';
+import bubblegum from './bubblegum.jpeg';
 const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => {
 
 
-  let style = { backgroundImage: `url(${selectedMovie.backdrop_path})` }
+  let style = { backgroundImage: `url(${selectedMovie.backdrop_path})` };
+
+  console.log(selectedMovie)
 
   return (
     <section className='single-movie'>
@@ -22,9 +25,11 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
         }
       <section className='single-movie-info'>
 
-        <div className='movie-poster'>
-          <img src={selectedMovie.poster_path}/>
-        </div>
+        {!!selectedMovie.poster_path &&
+          <div className='movie-poster'>
+            <img src={selectedMovie.poster_path}/>
+          </div>
+        }
 
 
         <div className='movie-details'>
@@ -78,7 +83,10 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
             {!!selectedMovie.genres &&
               <div className='genres'>
                 <h4>Genres: </h4>
-                <p>{ selectedMovie.genres.reduce((acc, genre) => `${acc}, ${genre}`) }</p>
+                <p>{ selectedMovie.genres.reduce((acc, genre, index) => {
+                  let stringToReturn = (index === selectedMovie.genres.length - 1) ? genre : genre + ', ';
+                  return [...acc, stringToReturn]
+                }, []) }</p>
               </div>
             }
           </article>
