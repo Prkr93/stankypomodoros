@@ -46,7 +46,7 @@
       margin: 0;
       padding: 1em;
       box-sizing: border-box;
-
+      font-family: "Archivo Black", sans-serif;
       font-size: 1em;
       @include breakpoint(narrow) {
         font-size: 1.125em;
@@ -69,6 +69,7 @@
     text-align: center;
     font-size: 2em;
     font-weight: bold;
+    font-family: "Bungee Shade", cursive;
   }
 
 

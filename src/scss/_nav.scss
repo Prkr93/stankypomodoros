@@ -8,12 +8,14 @@ nav {
   right: 0;
   padding-top: 4em;
   box-shadow: 2px 0px 8px $darkBlue inset;
+  z-index: 50;
   a {
     color: $darkBlue;
     display: block;
     padding: .5em 1em;
     text-align: right;
     text-decoration: none;
+    font-family: "Archivo Black", sans-serif;
     &:visited {
       color: $darkRed;
     }
