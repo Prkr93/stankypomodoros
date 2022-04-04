@@ -1,4 +1,4 @@
-# [Stanky Pomodoros]()
+# [Stanky Pomodoros](https://abaft-alarm.surge.sh/)
 
 ## About
 Rancid Tomatillos is a site that lets users browse movies, and view fun details about each one such as tagline, budget, a plot summary, and user community ratings. It's designed for a fluid and accessible experience for users of varying levels of ability and internet literacy.
@@ -22,7 +22,7 @@ Rancid Tomatillos is a site that lets users browse movies, and view fun details 
 - Responsive design
 
 ## Installation
-Stanky Pomodoros is deployed [here]() if you'd like to view it in your browser. You can also run it locally if you'd like by installing this app
+Stanky Pomodoros is deployed [here](https://abaft-alarm.surge.sh/) if you'd like to view it in your browser. You can also run it locally if you'd like by installing this app
 
 ###### In your terminal...
 
@@ -51,6 +51,25 @@ We use cypress for end to end and integration testing. In order to test the site
 
 ## Future Iterations
 
+### UserProfile
+- Add user profile and login
+- Add Friends who also have accounts
+- Rate films
+- favorite movies or save them to a future watch list
+
+### Add Friends
+- Link with friends who also have accounts
+- See their ratings, favorites and watch lists
+
+### FilmFindr
+- Swipe left or right to choose films that may or may not appeal to you at first glance
+- Improve suggested films based on swipe history
+
+### Matchmaker
+- Find and suggest films to watch with friends based on swipes, favorites and watch lists
+
+### randomizer
+- We call this one the relationship saver... Save time and avoid arguments about what to watch next. Let us choose for you.
 
 ## Contributors
 This app was a paired project by [Dillon Parker](https://github.com/Prkr93) and [Jerry Vohrer](https://github.com/Jerry-Vrrr) for Module 3 of the Front End Engineering Program at the Turing School of Software and Design.

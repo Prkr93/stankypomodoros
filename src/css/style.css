@@ -368,3 +368,8 @@ nav.active {
   max-width: 1em;
   margin-left: 0.25em;
 }
+
+.under-construction {
+  text-align: center;
+  font-size: 5em;
+}

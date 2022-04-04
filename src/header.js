@@ -2,8 +2,10 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import logo from './logo-red.png'
 
+let toggleNavBar;
+
 const Header = ({toggleHighlighted}) => {
-  const toggleNavBar = (e) => {
+  toggleNavBar = (e) => {
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
     e.target.classList.toggle('active');
@@ -20,4 +22,5 @@ const Header = ({toggleHighlighted}) => {
   )
 }
 
+export {toggleNavBar};
 export default Header;
