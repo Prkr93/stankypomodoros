@@ -4,10 +4,11 @@ import Header from './header';
 import MainContent from './mainContent';
 import Nav from './nav';
 import Footer from './footer';
+import UnderConstruction from './underConstruction';
 import SingleMovieView from './singleMovieView';
 import movieData from './data/test-data';
 import {movieDatabase, singleMovieData, passData, singleVideoData} from './apiCalls'
-import {Route, NavLink} from 'react-router-dom';
+import {Route, NavLink, Redirect} from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -27,9 +28,9 @@ class App extends Component {
        this.setState({ filteredMovies: data[0].movies });
        (data[1] && this.setState({ selectedMovie: data[1].movie }));
        (data[2] && this.getHighlightedVideo(data[2]))
-
     })
   }
+
   componentDidMount() {
     const moviePath = window.location.href;
     const movieId = moviePath.slice(moviePath.length - 6)
@@ -87,6 +88,9 @@ class App extends Component {
             toggleHighlighted={this.toggleHighlighted}
             selectedVideos={this.state.selectedVideos}
           />
+        } />
+        <Route path='/under-construction' render={() =>
+          <UnderConstruction />
         } />
         <Nav />
         <Footer />

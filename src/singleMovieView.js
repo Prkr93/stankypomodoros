@@ -1,16 +1,11 @@
-// import Modal from 'react-modal';
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import ReactDOM from 'react-dom';
 import {NavLink} from 'react-router-dom';
 import logoWhite from './logo-white.png';
-import bubblegum from './bubblegum.jpeg';
+
 const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => {
-
-
   let style = { backgroundImage: `url(${selectedMovie.backdrop_path})` };
-
-  console.log(selectedMovie)
 
   return (
     <section className='single-movie'>
@@ -24,28 +19,23 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
           </section>
         }
       <section className='single-movie-info'>
-
         {!!selectedMovie.poster_path &&
           <div className='movie-poster'>
             <img src={selectedMovie.poster_path}/>
           </div>
         }
-
-
         <div className='movie-details'>
           {!!selectedVideos &&
             <div className='videos'>
               <ReactPlayer url={ selectedVideos } />
             </div>
           }
-
           {!!selectedMovie.overview &&
             <article className='overview'>
               <h3>Overview:</h3>
               <p>{ selectedMovie.overview }</p>
             </article>
           }
-
           <article className='details'>
             {!!selectedMovie.budget &&
               <div className='budget'>
@@ -95,6 +85,5 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
     </section>
   )
 }
-
 
 export default SingleMovieView;

@@ -35,5 +35,4 @@ describe('Dashboard', () => {
         .click()
           .get('.dashboard')
   });
-
 });

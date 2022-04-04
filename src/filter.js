@@ -2,7 +2,6 @@ import React from 'react';
 import SearchBar from './searchBar';
 
 const Filter = ({movieRepo, changeFilter, searchThroughMovies}) => {
-
   const toggleFilterChange = (e) => {
     changeFilter(e)
   }

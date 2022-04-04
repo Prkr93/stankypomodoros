@@ -64,6 +64,13 @@ main h1, main h2, main h3, main h4 {
   font-family: "Archivo Black", sans-serif;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .filter {
   background: linear-gradient(#9A031E, #0A122A, #0A122A, #0A122A);
   color: white;
@@ -360,4 +367,9 @@ nav.active {
 .single-movie .single-movie-info .pomodoros {
   max-width: 1em;
   margin-left: 0.25em;
+}
+
+.under-construction {
+  text-align: center;
+  font-size: 5em;
 }

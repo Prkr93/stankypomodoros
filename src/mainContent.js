@@ -3,7 +3,6 @@ import Dashboard from './dashboard';
 import SingleMovieView from './singleMovieView'
 
 const MainContent = ({ movieRepo, filterOption, selectedMovie, toggleHighlighted, changeFilter, filteredMovies, searchThroughMovies }) => {
-
   return (
     <main>
       <Dashboard

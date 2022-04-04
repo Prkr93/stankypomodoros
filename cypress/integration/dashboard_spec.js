@@ -1,4 +1,5 @@
 describe('Dashboard', () => {
+  
   it('should be able to visit localhost:3000 and see the dashboard displayed', () => {
     cy.visit('http://localhost:3000')
       .contains('Stanky Pomodoros')
@@ -8,7 +9,7 @@ describe('Dashboard', () => {
   it('should display a list of movies within dashboard', () => {
     cy.visit('http://localhost:3000')
       .get('.movie-list')
-      .children('.movie-card') 
+      .children('.movie-card')
   });
 
   it('should have a sidebar that is hidden by default', () => {
@@ -48,7 +49,4 @@ describe('Dashboard', () => {
       .click()
       .url().should('eq', 'http://localhost:3000/movie/581392')
   });
-
-
-
 });
