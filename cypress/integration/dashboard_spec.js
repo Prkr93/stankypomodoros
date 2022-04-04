@@ -8,35 +8,45 @@ describe('Dashboard', () => {
   it('should display a list of movies within dashboard', () => {
     cy.visit('http://localhost:3000')
       .get('.movie-list')
-      .get('.movie-card')
+      .children('.movie-card') 
   });
 
-  it.skip('should have a sidebar that is hidden by default', () => {
+  it('should have a sidebar that is hidden by default', () => {
     cy.visit('http://localhost:3000')
-      .get('nav.sidebar')
+      .get('nav')
+      .should('not.be', 'visible')
   });
 
-  it.skip('should display a slideshow at the top of the dashboard', () => {
+  it('should be able to toggle sidebar on hamburger click', () => {
     cy.visit('http://localhost:3000')
-      .get('.slideshow')
-      .get('h2')
+      .get('header button')
+      .click()
+      .should('have.class', 'active')
+
+      .get('nav')
+      .should('have.class', 'active')
   });
 
-  it.skip('should have filter options above the movie list', () => {
+  it('should display a slideshow at the top of the dashboard', () => {
+    cy.visit('http://localhost:3000')
+      .get('.react-slideshow-wrapper')
+      .children('.images-wrap')
 
+      .get('.each-slide')
+      .children('h2')
   });
 
-  it.skip('should be able to change order of movies based on filter option', () => {
-
+  it('should have filter options above the movie list', () => {
+    cy.visit('http://localhost:3000')
+      .get('.filter')
+      .siblings('.movie-list')
   });
 
-
-  //single view
   it('should be able to change views to a single view after clicking on a movie', () => {
     cy.visit('http://localhost:3000')
       .get('#581392')
       .click()
-      .url('http://localhost:3000/581392')
+      .url().should('eq', 'http://localhost:3000/movie/581392')
   });
 
 

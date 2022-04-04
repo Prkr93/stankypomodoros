@@ -6,7 +6,7 @@ describe('Dashboard', () => {
 
   it.skip('', () => {
 
-  });
+  }); 
 
   it('should contain movie details grouped underneath', () => {
     cy.visit('http://localhost:3000/movie/581392')
