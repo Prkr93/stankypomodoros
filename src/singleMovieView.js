@@ -16,13 +16,13 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
         <h2>{ selectedMovie.title }</h2>
       </section>
         {!!selectedMovie.tagline &&
-          <div className='tagline'>
+          <section className='tagline'>
             <p>{ selectedMovie.tagline }</p>
-          </div>
+          </section>
         }
       <section className='single-movie-info'>
 
-        <div>
+        <div className='movie-poster'>
           <img src={selectedMovie.poster_path}/>
         </div>
 
