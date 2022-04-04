@@ -45,6 +45,7 @@
       bottom: 0;
       margin: 0;
       padding: 1em;
+      box-sizing: border-box;
 
       font-size: 1em;
       @include breakpoint(narrow) {
@@ -59,55 +60,103 @@
       }
     }
   }
+
+
+
+
   .tagline {
     padding: 0 1em;
     text-align: center;
+    font-size: 2em;
+    font-weight: bold;
   }
+
+
+
   .single-movie-info{
-    > * {
+
+    padding: 1em;
+    > div {
+      width: 80%;
+      margin: 0 auto;
+      padding: 1em;
+      > img {
+        max-width: 100%;
+      }
+    }
+
+
+
+
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      > div, .movie-details {
+        box-sizing: border-box;
+        width: 50%;
+      }
+    }
+
+    .movie-details {
       padding: 1em;
     }
 
-    @media (max-width: map-get($breakpoints, small) + 1) {
-      img {
-        width: 60%;
-        margin: auto;
-      }
-    }
-
-    @include breakpoint(small) {
+    .details {
+      padding: 1em;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-around;
-    }
-
-    img {
-      @include breakpoint(small) {
-        width: 50%;
-      }
-      @include breakpoint(medium) {
-        width: 40%;
-      }
-      @include breakpoint(large) {
-        width: 30%;
-      }
-      @include breakpoint(wide) {
-        width: 25%;
+      flex-wrap: wrap;
+      div {
+        padding: 1em;
       }
     }
 
-
-
-    div {
-      display: flex;
-      align-items: center;
-      h4 {
-        margin: 1em 0;
-      }
-      p {
-        padding-left: .5em;
-      }
+    .videos > div {
+      margin: 0 auto 2em;
+      width: auto !important;
     }
+
+    // @media (max-width: map-get($breakpoints, small) + 1) {
+    //   img {
+    //     width: 60%;
+    //     margin: auto;
+    //   }
+    // }
+
+    // @include breakpoint(small) {
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   justify-content: space-around;
+    // }
+
+    // img {
+    //   @include breakpoint(small) {
+    //     width: 50%;
+    //   }
+    //   @include breakpoint(medium) {
+    //     width: 40%;
+    //   }
+    //   @include breakpoint(large) {
+    //     width: 30%;
+    //   }
+    //   @include breakpoint(wide) {
+    //     width: 25%;
+    //   }
+    // }
+
+
+
+    // div {
+    //   display: flex;
+    //   align-items: center;
+    //   h4 {
+    //     margin: 1em 0;
+    //   }
+    //   p {
+    //     padding-left: .5em;
+    //   }
+    // }
 
   }
 }
