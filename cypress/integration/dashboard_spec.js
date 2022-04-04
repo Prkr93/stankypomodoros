@@ -8,7 +8,7 @@ describe('Dashboard', () => {
   it('should display a list of movies within dashboard', () => {
     cy.visit('http://localhost:3000')
       .get('.movie-list')
-      .children('.movie-card')
+      .children('.movie-card') 
   });
 
   it('should have a sidebar that is hidden by default', () => {

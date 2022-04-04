@@ -7,7 +7,7 @@ describe('MovieList', () => {
         .children('h3')
         .should('contain', 'Peninsula')
         .should('not.contain', 'Away')
-  });
+  }); 
 
   it('should be able to change movie list order based on filter option', () => {
     cy.visit('http://localhost:3000')
