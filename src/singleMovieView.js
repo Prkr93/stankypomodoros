@@ -21,54 +21,68 @@ const SingleMovieView = ({selectedMovie, toggleHighlighted, selectedVideos}) => 
           </div>
         }
       <section className='single-movie-info'>
-        <img src={selectedMovie.poster_path}/>
-        {!!selectedMovie.overview &&
-          <div className='overview'>
-            <h3>Overview:</h3>
-            <p>{ selectedMovie.overview }</p>
-          </div>
-        }
-        {!!selectedMovie.budget &&
-          <div className='budget'>
-            <h4>Budget: </h4>
-            <p>{ selectedMovie.budget }</p>
-          </div>
-        }
-        {!!selectedMovie.average_rating &&
-          <div className='average_rating'>
-            <h4>Rating: </h4>
-            <p>{ selectedMovie.average_rating }</p>
-          </div>
-        }
-        {!!selectedMovie.runtime &&
-          <div className='runtime'>
-            <h4>Runtime: </h4>
-            <p>{ selectedMovie.runtime }</p>
-          </div>
-        }
-        {!!selectedMovie.revenue &&
-          <div className='revenue'>
-            <h4>Revenue: </h4>
-            <p>{ selectedMovie.revenue }</p>
-          </div>
-        }
-        {!!selectedMovie.release_date &&
-          <div className='overrelease_dateview'>
-            <h4>Release Date: </h4>
-            <p>{ selectedMovie.release_date }</p>
-          </div>
-        }
-        {!!selectedMovie.genres &&
-          <div className='genres'>
-            <h4>Genres: </h4>
-            <p>{ selectedMovie.genres }</p>
-          </div>
-        }
-        {!!selectedVideos &&
-          <div className='videos'>
-            <ReactPlayer url={ selectedVideos } />
-          </div>
-        }
+
+        <div>
+          <img src={selectedMovie.poster_path}/>
+        </div>
+
+
+        <div className='movie-details'>
+          {!!selectedVideos &&
+            <div className='videos'>
+              <ReactPlayer url={ selectedVideos } />
+            </div>
+          }
+
+          {!!selectedMovie.overview &&
+            <article className='overview'>
+              <h3>Overview:</h3>
+              <p>{ selectedMovie.overview }</p>
+            </article>
+          }
+
+          <article className='details'>
+            {!!selectedMovie.budget &&
+              <div className='budget'>
+                <h4>Budget: </h4>
+                <p>{ `$${selectedMovie.budget.toLocaleString("en-US")}` }</p>
+              </div>
+            }
+            {!!selectedMovie.average_rating &&
+              <div className='average_rating'>
+                <h4>Rating: </h4>
+                <p>
+                  { selectedMovie.average_rating.toFixed(2) }
+                  <img src='./logo-white.png'/>
+                </p>
+              </div>
+            }
+            {!!selectedMovie.runtime &&
+              <div className='runtime'>
+                <h4>Runtime: </h4>
+                <p>{ `${selectedMovie.runtime} min` }</p>
+              </div>
+            }
+            {!!selectedMovie.revenue &&
+              <div className='revenue'>
+                <h4>Revenue: </h4>
+                <p>{ `$${selectedMovie.revenue.toLocaleString("en-US")}` }</p>
+              </div>
+            }
+            {!!selectedMovie.release_date &&
+              <div className='overrelease_dateview'>
+                <h4>Release Date: </h4>
+                <p>{ selectedMovie.release_date }</p>
+              </div>
+            }
+            {!!selectedMovie.genres &&
+              <div className='genres'>
+                <h4>Genres: </h4>
+                <p>{ selectedMovie.genres.reduce((acc, genre) => `${acc}, ${genre}`) }</p>
+              </div>
+            }
+          </article>
+        </div>
       </section>
     </section>
   )
