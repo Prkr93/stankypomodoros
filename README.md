@@ -1,4 +1,4 @@
-# [Stanky Pomodoros](https://abaft-alarm.surge.sh/)
+# [Stanky Pomodoros](https://bent-quiver.surge.sh/)
 
 ## About
 Rancid Tomatillos is a site that lets users browse movies, and view fun details about each one such as tagline, budget, a plot summary, and user community ratings. It's designed for a fluid and accessible experience for users of varying levels of ability and internet literacy.
@@ -22,7 +22,7 @@ Rancid Tomatillos is a site that lets users browse movies, and view fun details 
 - Responsive design
 
 ## Installation
-Stanky Pomodoros is deployed [here](https://abaft-alarm.surge.sh/) if you'd like to view it in your browser. You can also run it locally if you'd like by installing this app
+Stanky Pomodoros is deployed [here](https://bent-quiver.surge.sh/) if you'd like to view it in your browser. You can also run it locally if you'd like by installing this app
 
 ###### In your terminal...
 
@@ -55,7 +55,7 @@ Rancid Tomatillos is completely responsive across all breakpoints, and is design
 ![sp-mobile](https://user-images.githubusercontent.com/92649050/161656257-56407db1-a3ed-4f87-8e4a-c7be81e59a36.gif)
 
 ## Testing
-We use cypress for end to end and integration testing. In order to test the site run npm run cypress and you should be brought to a testing suite.
+We use cypress for end to end and integration testing. In order to test the site run `npm run cypress` and you should be brought to a testing suite.
 
 ## Future Iterations
 
@@ -76,7 +76,7 @@ We use cypress for end to end and integration testing. In order to test the site
 ### Matchmaker
 - Find and suggest films to watch with friends based on swipes, favorites and watch lists
 
-### randomizer
+### Randomizer
 - We call this one the relationship saver... Save time and avoid arguments about what to watch next. Let us choose for you.
 
 ## Contributors
