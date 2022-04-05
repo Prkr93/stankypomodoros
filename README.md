@@ -40,11 +40,19 @@ Once all the dependancies are installed run `npm start` and the site should be a
 ## Features
 Upon page load the site will fetch a list of movies and display a grid of single movie cards as well as a slideshow featuring the current top 5 rated movies in the database. The user can click a poster to see a more detailed page including a plot overview, budget, as well as an associated video you can play right on the page.
 
+![st-slideshow](https://user-images.githubusercontent.com/92649050/161654729-4a2824a8-d7b2-4fa2-b9f9-4a2a49fd0477.gif)
+
 The user can also enter text into a search bar to filter the movies by title, or choose to sort the movies by rating, alphabetically from A-Z or vice versa.
+
+![st-filter](https://user-images.githubusercontent.com/92649050/161654802-c4cadcda-d7e4-4b78-a50f-abffb6039d91.gif)
 
 As a users types each character into the search bar, it instantly updates the results with each keystroke.
 
+![sp-responsive](https://user-images.githubusercontent.com/92649050/161656209-9f7ceab9-5372-4594-9ce6-29db6ca0b520.gif)
+
 Rancid Tomatillos is completely responsive across all breakpoints, and is designed to work well on mobile.
+
+![sp-mobile](https://user-images.githubusercontent.com/92649050/161656257-56407db1-a3ed-4f87-8e4a-c7be81e59a36.gif)
 
 ## Testing
 We use cypress for end to end and integration testing. In order to test the site run npm run cypress and you should be brought to a testing suite.

@@ -51,7 +51,6 @@ class App extends Component {
     this.setState({ selectedVideos: videos });
   }
 
-
   toggleHighlighted = (e) => {
     const movieToHighLight = e.target.closest('.movie-id');
     if (this.state.selectedMovie) {
