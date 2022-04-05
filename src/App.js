@@ -67,10 +67,14 @@ class App extends Component {
     this.setState({filteredMovies: moviesToDisplay});
   }
 
+  reloadDashboard = () => {
+    this.setState({selectedMovie: false, selectedVideos: false})
+  }
+
   render() {
     return (
       <div className='app' >
-        <Header toggleHighlighted={this.toggleHighlighted} />
+        <Header reloadDashboard={this.reloadDashboard} />
         <div className='error'></div>
         <Route exact path='/' render={() =>
           <MainContent

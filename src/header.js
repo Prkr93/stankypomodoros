@@ -4,7 +4,7 @@ import logo from './logo-red.png'
 
 let toggleNavBar;
 
-const Header = ({toggleHighlighted}) => {
+const Header = ({reloadDashboard}) => {
   toggleNavBar = (e) => {
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
@@ -13,7 +13,7 @@ const Header = ({toggleHighlighted}) => {
 
   return (
     <header>
-      <NavLink to='/' className='title' onClick={toggleHighlighted}>
+      <NavLink to='/' className='title' onClick={reloadDashboard}>
         <img className='logo' src={logo} />
         <h1>Stanky Pomodoros</h1>
       </NavLink>

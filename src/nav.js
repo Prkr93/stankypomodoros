@@ -7,7 +7,7 @@ const Nav = () => {
     <nav>
       <NavLink onClick={toggleNavBar} to='/under-construction'>FilmFindr</NavLink>
       <NavLink onClick={toggleNavBar} to='/under-construction'>MatchMaker</NavLink>
-      <NavLink onClick={toggleNavBar} git status to='/under-construction'>Randomizer</NavLink>
+      <NavLink onClick={toggleNavBar} to='/under-construction'>Randomizer</NavLink>
     </nav>
   )
 }
