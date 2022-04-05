@@ -8,6 +8,7 @@ const getData = (fetchUrl) => {
     main.innerHTML = error.message
   })
 }
+
 let singleMovieData;
 let singleVideoData;
 const movieDatabase = getData('movies')
